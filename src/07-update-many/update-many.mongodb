@@ -1,0 +1,13 @@
+use("sample_training")
+//db.zips.find({city:"CLEVELAND"}).count()
+//updateMany --> Para actualizar muchas doctos
+db.zips.updateMany(
+    {
+        city: "CLEVELAND" //Por ciudad
+    },
+    {
+        $inc: {
+            pop: 1000
+        }
+    }
+)

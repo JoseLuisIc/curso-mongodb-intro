@@ -1,0 +1,42 @@
+use("sample_training")
+//db.zips.find({city:"CLEVELAND"}).count()
+//updateMany --> Para actualizar muchas atributos y añadir atributos
+/*db.zips.updateMany(
+    {
+        city: "CLEVELAND" //Por ciudad
+    },
+    {
+        //Set para añadir un var nuevo
+        $set: {
+            myAtrribute: "Hola"
+        }
+    }
+)*/
+
+// $rename :> para renombrar
+/*
+db.zips.updateMany(
+    {
+        city: "CLEVELAND" //Por ciudad
+    },
+    {
+        //Set para añadir un var nuevo
+        $rename: {
+            myAtrribute: "my_data"
+        }
+    }
+)*/
+ 
+// $unset :> para eliminar atributos
+
+db.zips.updateMany(
+    {
+        city: "CLEVELAND" //Por ciudad
+    },
+    {
+        //Set para añadir un var nuevo
+        $unset: {
+            my_data: ""
+        }
+    }
+)

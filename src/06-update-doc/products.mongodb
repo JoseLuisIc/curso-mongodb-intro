@@ -1,0 +1,35 @@
+use("platzi_store")
+db.products.drop() //Usa la conexión y lo borra todo de la colección
+
+db.products.insertMany(
+    [
+        {
+        _id: 1,
+        name: "Product 1",
+        price: 100
+        },
+        {
+        _id: 2,
+        name: "Product 2",
+        price: 110
+        },
+        {
+        _id: 3,
+        name: "Product 3",
+        price: 80
+        }
+        ,
+        {
+        _id: 4,
+        name: "Product 4",
+        price: 90
+        }
+        ,
+        {
+        name: "Product 5",
+        price: 90
+        }
+    ]
+)
+
+db.products.find()
