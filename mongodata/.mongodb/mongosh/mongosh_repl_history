@@ -1,0 +1,13 @@
+db.listingsAndReviews.find()
+db.listingsAndReviews.find().count()
+db.listingsAndReviews.find()
+listingsAndReviews.find().count()
+itten for the legacy shell? Try running `snippet install mongocompat`)
+ls
+show collections
+use("sample_aribnb" )
+show dbs
+db.products.find()
+use("platzi_store" )
+show dbs
+show db
