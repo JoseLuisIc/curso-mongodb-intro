@@ -1,0 +1,15 @@
+use("platzi_store")
+
+db.iot.updateMany(
+
+    //QUERY
+    {sensor: "A001"},
+    //UPDATE
+    {
+        $pull: {
+            readings: { $gte: 3} //Quitar elementos mayores o iguales a 3
+        }
+
+    }
+
+)

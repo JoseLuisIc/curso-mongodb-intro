@@ -1,0 +1,11 @@
+use("platzi_store")
+db.inventory.updateMany({}, //Es vacío porque no hay un attributo para buscar
+    {   
+        //Quitar mas de un elemento de  un array
+        //in busqueda interna
+        $pull: {
+            tags: {
+                $in: ["appliance","school"]
+            }
+        }
+    })

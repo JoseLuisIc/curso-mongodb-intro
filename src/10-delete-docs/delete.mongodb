@@ -1,0 +1,10 @@
+use("platzi_store")
+//db.products.deleteOne({_id: ObjectId("111")}) Solo si fuera el id generado por mongo
+//db.products.deleteOne({_id:1}) Boorar un documento
+/*db.products.deleteMany(
+    {
+        price: 100
+    }
+)*/ //Borrar varios documentos que cumplan cierto criterio
+
+db.products.drop() //Borra todo los docs

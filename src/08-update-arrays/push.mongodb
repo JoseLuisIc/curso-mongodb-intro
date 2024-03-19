@@ -1,0 +1,8 @@
+use("platzi_store")
+db.inventory.updateOne({_id:4},
+    {   
+        //Agregar elementos de  un array
+        $push: {
+            tags: "headphones"
+        }
+    })

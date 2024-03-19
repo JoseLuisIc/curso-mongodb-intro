@@ -1,0 +1,28 @@
+use("platzi_store")
+//usar $gt (>)(Mayor que) ó $gte (>=)(Mayor igual)
+//db.inventory.find({qty:{$gt:29}}) //Uso del mayor que
+
+//db.inventory.find({qty:{$gte:30}}) //Uso mayor o igual que
+
+
+//usar $lt (<)(Menor que) ó $lte (<=)(Menor igual)
+
+//db.inventory.find({qty:{$lt:20}}) //Uso del menor que
+
+//db.inventory.find({qty:{$lte:20}}) //Uso menor o igual que
+
+//Consulta personalizada
+
+//db.inventory.find({ qty: {$gte:20, $lte:35} })
+//db.inventory.find({ qty: {$gte:20, $lte:25} })
+
+//Para buscar con más de un forma de condicion
+/*db.inventory.find({ 
+    "item.code":"123",
+    qty: {$gte:20, $lte:25} 
+}) */
+
+db.inventory.find({ 
+    "item.code":{ $ne:"123" } ,
+    qty: {$gte:20, $lte:25} 
+})

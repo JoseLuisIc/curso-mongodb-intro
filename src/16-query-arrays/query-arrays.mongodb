@@ -1,0 +1,38 @@
+use("platzi_store")
+/*
+Operadores de arrays:
+
+$in => para seleccionar documentos que tengan un campo 
+con un valor que coincida con cualquiera de los valores 
+especificados en un array.
+
+$nin => selecciona documentos que no tengan un campo con un valor 
+que coincida con ninguno de los valores especificados en un array. (Contrario a $in)
+
+$all => selecciona documentos que tengan un campo con un array que 
+contenga todos los valores especificados en la consulta.
+
+$elemMatch => para seleccionar documentos que tengan un campo con un 
+array que contenga al menos un elemento que cumpla con ciertos criterios de consulta.
+
+$size => selecciona documentos que tengan un campo con un array de 
+un tamaño específico.
+
+*/
+
+//db.inventory.find({qty: { $in: [20,25]}}) //El qty es un campo, traee solo los del 20 y 25
+//db.inventory.find({tags: { $in: ["book","electronics"]}}) // Te retorna book o electronics
+
+
+//db.inventory.find({qty: { $nin: [20,25]}}) //No tengan el valor 20,25
+//db.inventory.find({tags: { $nin: ["book","electronics"]}}) //No tenganel valor book, electronics
+
+//db.inventory.find({tags: {$all:["book","school"]}}) //Trae todos los datos o elementos que esten en el array
+
+//db.inventory.find({tags: {$size:2}}) //Trae todos los datos o elementos que tengan el tamaño del array
+
+//db.survey.find({results: {$elemMatch:{score:7}}}) //Trae todos los elementos que contengan la busqueda
+db.survey.find({results: {$elemMatch:{product:"xyz", 
+score:{$gte:7}}}}
+) //Trae todos los elementos que contengan la busqueda del product y score mayor o igual a 7
+

@@ -1,0 +1,19 @@
+use("platzi_store")
+/*Comparadores */
+/*Ejemplos Equals ó $eq*/
+
+//db.inventory.find({qty:20}) //Igual a 20 forma implicita
+
+//db.inventory.find({qty: {$eq:20}}) //Buscar qty = 20 forma explicita
+
+
+//db.inventory.find({ "item.name":"mn"}) //para buscar en un subdocumento froma implicita
+
+//db.inventory.find({ "item.code":"123"}) //para buscar en un subdocumento forma implicita
+
+//db.inventory.find({ "item.code":{ $eq: "000"}}) //para buscar en un subdocumento forma explicita
+
+
+/*Ejemplos No Equals ó $ne*/
+
+db.inventory.find({qty:{$ne:20}})
